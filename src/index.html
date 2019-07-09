@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Super Galactic Age Calculator</title>
+  </head>
+  <body>
+    <div class="jumbotron" id="head">
+      <h2><center><b>Super Galactic Age Calculator</b> by Uriel Gonzalez</center></h2>
+      <h2><center><b>Welcome!</b></center></h2>
+    </div>
+    <div class="jumbotron" id="intro">
+      <h5><center>Click start to find out your age in other planets and more!</center></h5>
+      <center><button type="button" class="btn" id="start">Start</button></center>
+    </div>
+    <div class="container" id="options">
+      <h5>Choose an option:</h5>
+      <button type="button" class="btn" id="ageBtn">Calculate your age in a different planet</button>
+      <button type="button" class="btn" id="expBtn">Calculate how many life days you have left</button>
+      <button type="button" class="btn" id="diffBtn">Calculate the different of two dates in seconds</button>
+    </div>
+    <div class="container" id="ageCal">
+      <form id="ageCalForm">
+      <h3>What's your age?</h3>
+      <br>
+      <input type="text" name="age" id="ageNum">
+      <br>
+      <br>
+      <h3>Select a planet:</h3>
+      <br>
+        <select name="planet" id="planet">
+          <option value="mercury">Mercury</option>
+          <option value="venus">Venus</option>
+          <option value="mars">Mars</option>
+          <option value="jupiter">Jupiter</option>
+        </select>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <button type="button" class="btn goBack">Go back</button>
+          </div>
+          <div class="col-md-6">
+            <button type="submit" class="btn" id="enterAge">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container" id="ageOutcomeBox">
+      <h3>You are <span id="ageOutcome"></span> old in <span id="planetInput"></span>!</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <button type="button" class="btn" id="retAge">Back</button>
+        </div>
+        <div class="col-md-6">
+          <button type="button" class="btn" id="modAge">See Age in Seconds!</button>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="ageInSecsBox">
+          <h1><center>Your age in seconds is <span id="ageInSecs"></span> seconds!</center></h1>
+          <div class="col-md-6">
+            <button type="button" class="btn" id="retHome">Back to Menu</button>
+          </div>
+    </div>
+    <div class="container" id="expect">
+      <h3><center>Your life expectancy in different planets</center></h3>
+      <h4><center>Check out this <a href="https://www.ssa.gov/oact/STATS/table4c6.html">Life Expectancy Chart</a></center></h4>
+      <form id="expectForm">
+                <label for="age">Age: </label>
+                <input type="text" name="age" id="ageNumExp">
+                <label for="exp">Life Expectancy: </label>
+                <input type="text" name="exp" id="expNum">
+                <label for="planet">Planet: </label>
+                <select name="planet" id="planetExp">
+                    <option value="mercury">Mercury</option>
+                    <option value="venus">Venus</option>
+                    <option value="mars">Mars</option>
+                    <option value="jupiter">Jupiter</option>
+                </select>
+        <div class="row">
+          <div class="col-md-6">
+            <button type="button" class="btn goBack">Go back </button>
+          </div>
+          <div class="col-md-6">
+            <button type="submit" class="btn" id="ageNum">Submit!</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container" id="expOutcomeBox">
+      <h1>Here are you results!</h1>
+      <hr>
+      <h2>You are <span id="expOutcome"></span> in <span id="expPlanetInput"></span>!</h2>
+      <h2>The life expectancy in that planet is <span id="lifeExp"></span>.</h2>
+      <h2>You have <span id="yearsLeft"></span> years left to live in that planet.</h2>
+      <h2><span id="expMessage"></span></h2>
+      <div class="col-md-6">
+        <button type="button" class="btn" id="returnHome">Back to Menu</button>
+      </div>
+    </div>
+    <div class="container" id="dateBox">
+      <h3>Find out how many seconds apart you are from each date.</h3>
+      <h5>-- NUMBERS ONLY --</h5>
+      <form id="dateForm">
+      <div class="evenly-distributed-children">
+        <h3>From:</h3>
+        <hr>
+        <label for="year1">Year: </label>
+        <input type="text" id="year1">
+        <label for="month1">Month: </label>
+        <input type="text" id="month1">
+        <label for="day1">Day: </label>
+        <input type="text" id="day1">
+      </div>
+      <div class="evenly-distributed-children">
+        <h3>To:</h3>
+        <hr>
+        <label for="year2">Year: </label>
+        <input type="text" id="year2">
+        <label for="month2">Month: </label>
+        <input type="text" id="month2">
+        <label for="day2">Day: </label>
+        <input type="text" id="day2">
+      </div>
+        <div class="row">
+          <div class="col-md-6">
+            <button type="button" class="btn goBack">Go back </button>
+          </div>
+          <div class="col-md-6">
+            <button type="submit" class="btn" id="dateSubmit">Submit!</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container" id="dateOutcomeBox">
+      <h3>Your outcome</h3>
+      <hr>
+      <h2>The difference between the two dates are <span id="dateOutcome"> </span> seconds!<h2>
+    <div class="col-md-6">
+      <button type="button" class="btn" id="retHome2">Back to Menu</button>
+    </div>
+    </div>
+  </body>
+  <div class="footer">
+    <p><center>Copyright (C) by Uriel Gonzalez, 2019.</center></p>
+  </div>
+</html>
