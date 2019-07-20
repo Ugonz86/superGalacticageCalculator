@@ -72,42 +72,56 @@ $("#planetInput").text("Venus");
 } else if (planet === "mars"){
 $("#ageOutcome").text(newCalculator.ageMars(age));
 $("#planetInput").text("Mars");
-} else if (planet === "venus"){
+} else if (planet === "jupiter"){
 $("#ageOutcome").text(newCalculator.ageJupiter(age));
 $("#planetInput").text("Jupiter");
 }
 });
 
 $("#expectForm").submit(function(event){
-newCalculator = new Calculator($("#ageNumExp").val());
-event.preventDefault();
-$("#expect").hide("ease");
-$("#expOutcomeBox").show("ease");
-let age = $("#ageNumExp").val();
-let le = $("#expNum").val();
-let planet = $("#planetExp").val();
-if (planet === "mercury"){
-$("#expOutcome").text(newCalculator.ageMercury(age));
-$("#lifeExp").text(newCalculator.ageMercury(le));
+    newCalculator = new Calculator($("#ageNumExp").val());
+    event.preventDefault();
+    $("#expect").hide("ease");
+    $("#expOutcomeBox").show("ease");
+    let age = $("#ageNumExp").val();
+    let le = $("#expNum").val();
+    let planet = $("#planetExp").val();
+    let ageInPlanet;
+    let expectancyInPlanet;
+    if (planet === "mercury"){
+          ageInPlanet = newCalculator.ageMercury(age);
+          expectancyInPlanet = newCalculator.ageMercury(le);
+          $("#expOutcome").text(ageInPlanet);
+          $("#lifeExp").text(expectancyInPlanet);
+    } else if (planet === "venus"){
+          ageInPlanet = newCalculator.ageVenus(age);
+          expectancyInPlanet = newCalculator.ageVenus(le);
+          $("#expOutcome").text(ageInPlanet);
+          $("#lifeExp").text(expectancyInPlanet);
+    } else if (planet === "mars"){
+          ageInPlanet = newCalculator.ageMars(age);
+          expectancyInPlanet = newCalculator.ageMars(le);
+          $("#expOutcome").text(ageInPlanet);
+          $("#lifeExp").text(expectancyInPlanet);
+    } else if (planet === "jupiter"){
+          ageInPlanet = newCalculator.ageJupiter(age);
+          expectancyInPlanet = newCalculator.ageJupiter(le);
+          $("#expOutcome").text(ageInPlanet);
+          $("#lifeExp").text(expectancyInPlanet);
+    }
+    $("#expPlanetInput").text(planet.toUpperCase());
+    if (ageInPlanet > expectancyInPlanet){
+      $("#results").text("You have surpassed your life expectancy on this planet by "+ Math.round((ageInPlanet - expectancyInPlanet)*100)/100 + " years!");
+    }
+    else{
+      $("#results").text("You have "+ newCalculator.expectancy(planet,le,age) +" years left to live in that planet!");
+    }
+});
 
-} else if (planet === "venus"){
-$("#expOutcome").text(newCalculator.ageVenus(age));
-$("#lifeExp").text(newCalculator.ageVenus(le));
-
-} else if (planet === "mars"){
-            $("#expOutcome").text(newCalculator.ageMars(age));
-            $("#lifeExp").text(newCalculator.ageMars(le));
-} else if (planet === "jupiter"){
-            $("#expOutcome").text(newCalculator.ageJupiter(age));
-            $("#lifeExp").text(newCalculator.ageJupiter(le));
-}
-        $("#expPlanetInput").text(planet.toUpperCase());
-        $("#yearsLeft").text(newCalculator.expectancy(planet, le, age));
-    });
-    $("#returnHome").click(function(){
-    $("#expOutcomeBox").hide("ease");
-    $("#options").show("ease");
-    });
+$("#returnHome").click(function(){
+  $("#expOutcomeBox").hide("ease");
+  $("#options").show("ease");
+});
 
 $("#dateForm").submit(function(event){
   event.preventDefault();
@@ -129,18 +143,3 @@ $("#ageInSecsBox").show("ease");
 let age = $("#ageNum").val();
 $("#ageInSecs").text(newCalculator.ageSeconds(age));
 });
-
-// let tempModal = document.getElementById('ageInSecsBox');
-// let tempBtn = document.getElementById("modAge");
-// let tempSpan = document.getElementByClassName("close")[0];
-// tempBtn.onclick = function(){
-// tempModal.style.display = "block";
-// };
-// tempSpan.onclick = function(){
-// tempModal.style.display = "none";
-// };
-// window.onclick = function(){
-// if (event.target == tempModal){
-// tempModal.style.display = "none";
-// };
-// };

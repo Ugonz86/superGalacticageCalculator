@@ -22,8 +22,6 @@ export class Calculator {
     ageJupiter(age){
         return Math.round((age / 11.86) * 100) / 100;
     }
-
-    // averageLE = average Life Expectancy
     expectancy(planet, averageLE, age){
         if (planet.toLowerCase() === "mercury"){
             return Math.round((this.ageMercury(averageLE) - this.ageMercury(age)) * 100) / 100;
@@ -40,13 +38,5 @@ export class Calculator {
         var date1 = new Date(`${year1}-${month1}-${day1}`);
         var date2 = new Date(`${year2}-${month2}-${day2}`);
         return Math.abs((Date.parse(date2) - Date.parse(date1)) / 1000);
-    }
-
-    checkExpectancy(num){
-        if (num > 0){
-            return num;
-        } else {
-            return "Lucky You!";
-        }
     }
 }
